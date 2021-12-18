@@ -1,5 +1,5 @@
 
-# React Reaction Component
+# React Covid Tracker
 
 Live URL : https://reactcovidtracker-native.netlify.app/
 
