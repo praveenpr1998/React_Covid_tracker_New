@@ -22,11 +22,11 @@ function StateCard(props) {
     <div
       className="StateCard p4"
       key={stateID}
-      onClick={() => onCardClick(stateID)}
+
     >
       <ErrorBoundary>
-        <div className="state-card-header">
-          <span className="state-card-name">
+        <div className="state-card-header" >
+          <span className="state-card-name"  onClick={() => onCardClick(stateID)}>
             {ALL_CONSTANTS.mappedStates[stateID]}
           </span>
           {selectedDistrict && !content.dateFilterApplied && (
@@ -52,6 +52,7 @@ function StateCard(props) {
               ? content.districts[selectedDistrict]
               : content
           }
+          onCardClick={onCardClick}
         />
       </ErrorBoundary>
     </div>

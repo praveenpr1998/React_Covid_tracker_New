@@ -227,7 +227,7 @@ function HomeContent(props) {
   };
 
   const resetFilters = () => {
-    setCovidData(covidDataCopy);
+    setCovidData(covidStoreData.payload);
   };
 
   return (

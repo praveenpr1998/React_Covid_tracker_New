@@ -4,7 +4,7 @@ import "./SliderContent.scss";
 import Icons from "../../../resources/icons/index";
 
 function SliderContent(props) {
-  const { contents } = props;
+  const { contents ,onCardClick,stateID} = props;
   const [activeIndex, setActiveIndex] = useState(0);
 
   const slides = [
@@ -60,6 +60,7 @@ function SliderContent(props) {
             className={
               index === activeIndex ? "active-slide" : "inactive-slide"
             }
+            onClick={()=>onCardClick(stateID)}
           >
             <div className="slider-content mt5">
               <span className="slider-content-title">{slide.title}</span>
