@@ -1,0 +1,21 @@
+// styles for Loader Component
+@import "../../resources/scss/index.scss";
+
+.Loader {
+  @include flex-align-center;
+  flex-direction: column;
+  gap: 1rem;
+  .loading-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid $color-ink-blue;
+    border-radius: 50%;
+    border-top-color: $color-white;
+    animation: spin 1s ease-in-out infinite;
+    @keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  }
+}

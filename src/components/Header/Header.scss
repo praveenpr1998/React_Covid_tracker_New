@@ -1,0 +1,12 @@
+// styles for header Component
+@import "../../resources/scss/index.scss";
+
+.header {
+  display: grid;
+  align-items: center;
+  min-height: 10vh;
+  .logo-text {
+    font-size: 20px;
+    text-decoration: none;
+  }
+}

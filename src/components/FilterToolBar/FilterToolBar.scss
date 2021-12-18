@@ -1,0 +1,47 @@
+// styles for FilterToolBar Component
+@import "../../resources/scss/index.scss";
+
+.FilterToolBar {
+  align-items: center;
+  background-color: $color-ink-blue;
+  min-height: 10vh;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  .title {
+    text-transform: capitalize;
+    color: $color-white;
+  }
+  .date-filter {
+    color: $color-white;
+    @include grid-with-gap(0.5rem);
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .district-filter,
+  .reset-filter,
+  .search-filter {
+    color: $color-white;
+    @include grid-with-gap(0.5rem);
+  }
+  .reset-filter {
+    button {
+      height: auto;
+      padding: 1.5em auto;
+      background-color: $color-light-blue;
+      border: none;
+      border-radius: 3px;
+    }
+  }
+  .sort-filter {
+    color: $color-white;
+    @include grid-with-gap(0.5rem);
+    div {
+      @include grid-with-gap(1rem);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

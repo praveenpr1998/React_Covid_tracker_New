@@ -1,0 +1,16 @@
+// styles for Details Screen Component
+@import "../../resources/scss/index.scss";
+.DetailView {
+  .details-table-div {
+    @include flex-align-center;
+  }
+  .detailsTable {
+    tbody {
+      height: 50vh !important;
+    }
+    .table-delta-view,
+    .table-delta7-view {
+      @include grid-with-gap(1rem);
+    }
+  }
+}

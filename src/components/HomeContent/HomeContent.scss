@@ -1,0 +1,15 @@
+// styles for Home Component
+@import "../../resources/scss/index.scss";
+.HomeContent {
+  .cards-view {
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .no-data {
+      @include flex-align-center;
+    }
+  }
+}

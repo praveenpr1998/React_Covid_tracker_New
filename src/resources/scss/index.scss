@@ -1,0 +1,145 @@
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  font-family: "IBM Plex Sans Medium" !important;
+}
+
+#root {
+  height: 100%;
+}
+$IBM-font-regular: "IBM Plex Sans";
+$IBM-font-medium: "IBM Plex Sans Medium";
+
+$small-screen-size: 300px;
+$medium-screen-size: 900px;
+
+//colors
+$color-black: black;
+$color-white: #ffffff;
+$color-darkgrey: darkgrey;
+$color-error-red: #be4242;
+$color-light-blue: #edf5ff;
+$color-ink-blue: #2883c3;
+$color-dark-blue: #0f62fe;
+$color-dim-grey-1: #f9f9fa;
+$color-dim-grey-2: #f4f4f4;
+$color-dim-grey-3: #edeef0;
+
+@font-face {
+  font-family: $IBM-font-regular;
+  src: url("../fonts/IBM Plex Sans/IBMPlexSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: $IBM-font-medium;
+  font-size: 14px;
+  src: url("../fonts/IBM Plex Sans/IBMPlexSans-Medium.ttf");
+}
+
+//All mixins
+
+$sizes: 12;
+
+@mixin margin-classes {
+  @for $i from 1 through $sizes {
+    $margin: $i * 0.25rem;
+    .m#{$i} {
+      margin: $margin;
+    }
+    .ml#{$i} {
+      margin-left: $margin;
+    }
+    .mr#{$i} {
+      margin-right: $margin;
+    }
+    .mt#{$i} {
+      margin-top: $margin;
+    }
+    .mb#{$i} {
+      margin-bottom: $margin;
+    }
+    .mx#{$i} {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+    .my#{$i} {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+  }
+}
+@include margin-classes;
+
+@mixin padding-classes {
+  @for $i from 1 through $sizes {
+    $padding: $i * 0.25rem;
+    /* padding #{$padding} */
+    .p#{$i} {
+      padding: $padding !important;
+    }
+    .pl#{$i} {
+      padding-left: $padding !important;
+    }
+    .pr#{$i} {
+      padding-right: $padding !important;
+    }
+    .pt#{$i} {
+      padding-top: $padding !important;
+    }
+    .pb#{$i} {
+      padding-bottom: $padding !important;
+    }
+    .px#{$i} {
+      padding-left: $padding !important;
+      padding-right: $padding !important;
+    }
+    .py#{$i} {
+      padding-top: $padding !important;
+      padding-bottom: $padding !important;
+    }
+  }
+}
+@include padding-classes;
+
+@mixin flex-align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid-with-gap($gapValue) {
+  display: grid;
+  gap: $gapValue;
+}
+
+@mixin hide-scrollbar {
+  /*  Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+// element css
+
+.input-box {
+  padding: 0.25em 0.5em;
+  background-color: 84dfff;
+  border: 2px solid $color-light-blue;
+  border-radius: 4px;
+  &:focus {
+    box-shadow: 0 0 0 3px $color-light-blue;
+    outline: 3px solid transparent;
+  }
+}
+
+input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+}
+
+input:disabled {
+  background-color: $color-dim-grey-3 !important;
+}
