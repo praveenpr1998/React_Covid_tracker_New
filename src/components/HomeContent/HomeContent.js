@@ -264,7 +264,7 @@ function HomeContent(props) {
                   )
               )
             ) : (
-              <span className="no-data">No Data</span>
+              <span className="no-data mt5">No Data</span>
             )}
           </div>
         </ErrorBoundary>
