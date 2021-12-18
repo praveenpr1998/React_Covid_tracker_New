@@ -32,6 +32,10 @@ function DetailView(props) {
       setCovidData(filteredData);
       setCovidDataCopy(filteredData);
     }
+    else {
+      setCovidData({});
+      setCovidDataCopy({});
+    }
   }, [covidStoreData.payload, stateID]);
 
   const columns = [
