@@ -12,6 +12,8 @@ import { useNavigate } from "react-router-dom";
 function HomeContent(props) {
   const { covidStoreData, getCovidData, getCovidDatesData } = props;
   const [covidData, setCovidData] = useState({});
+
+  // used a copy of the local covidData to keep track of the filtered data 
   const [covidDataCopy, setCovidDataCopy] = useState({});
   const navigate = useNavigate();
 
@@ -28,6 +30,8 @@ function HomeContent(props) {
   }, [covidStoreData.payload]);
 
   const onSearchValueChange = (value) => {
+
+    // take a copy of the and filter it with searched value from filterComponet callback
     var filteredData = { ...covidDataCopy };
 
     Object.keys(filteredData).map((key) => {
@@ -49,6 +53,8 @@ function HomeContent(props) {
   const onSortByChange = (object) => {
     switch (object.value) {
       case "confirmedCount": {
+
+        // Sorting the data based on confirmed count value and storing it back as object of objects
         let orderedData = Object.keys(covidData)
           .sort((a, b) => {
             if (object.sortBy === "asc")
@@ -212,6 +218,9 @@ function HomeContent(props) {
         delta7: "",
       };
 
+      // making the datefiltered key as true to have a check for disaplying content values
+      // if true display the values on the filtered dates
+      // if not display the first districts values as date based filter could not be done for districts based on the data recieved
       Object.keys(dataCopy).map((key) => {
         Object.assign(dataObj, dataCopy[key].dates[value]);
         dataCopy[key] = Object.assign(dataCopy[key], dataObj);
