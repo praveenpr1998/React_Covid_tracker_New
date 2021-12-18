@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./Store/store";
 import { PersistGate } from "redux-persist/integration/react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Navigate,
   Routes,
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route index element={<Home />} />
         <Route path="/details/:stateID" element={<DetailView />} />
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/#" />} />
       </Routes>
     </Router>
   );

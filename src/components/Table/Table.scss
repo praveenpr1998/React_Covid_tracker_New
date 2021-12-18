@@ -2,6 +2,11 @@
 @import "../../resources/scss/index.scss";
 .custom-table {
   text-transform: capitalize;
+  .no-data {
+    @include flex-align-center;
+    font-weight: bold;
+    color: $color-error-red;
+  }
   table {
     border-collapse: collapse;
     width: 1000px;

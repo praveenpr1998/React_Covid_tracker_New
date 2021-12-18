@@ -15,7 +15,7 @@ function Table(props) {
           </tr>
         </thead>
         <tbody>
-          {dataSource.map((data, i) => (
+          {dataSource.length ? dataSource.map((data, i) => (
             <tr key={data.title + "" + i}>
               {columns.map((column, i) => (
                 <td key={column.title + "" + i}>
@@ -25,7 +25,7 @@ function Table(props) {
                 </td>
               ))}
             </tr>
-          ))}
+          )) : <span className="no-data mt5">No Data</span>}
         </tbody>
       </table>
     </ErrorBoundary>
