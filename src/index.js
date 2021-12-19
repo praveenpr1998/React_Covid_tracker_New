@@ -12,6 +12,7 @@ import {
   Navigate,
   Routes,
 } from "react-router-dom";
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 function App() {
   return (
@@ -35,3 +36,6 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+
+serviceWorkerRegistration.register();
